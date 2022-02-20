@@ -51,10 +51,16 @@ def frst(a):
     return fst
 
 dictitems = dict.items()
-print(f"existem {len(dictitems)} nomes")
-#print("por ordem de frequencia: ")
-#print(list(map(frst , sorted(dictitems, key=scnd , reverse=True))))
-print(sorted(dict.keys()) )
+nrNomes =len(dictitems) 
+print(f"existem {nrNomes} nomes")
+
+ordenadoFreq = list(map(frst , sorted(dictitems, key=scnd , reverse=True)))
+print("por ordem de frequencia: ")
+print(ordenadoFreq)
+
+ordenadoAlph = sorted(dict.keys())
+print("por ordem alfabetica: ")
+print( ordenadoAlph)
 
 
 
