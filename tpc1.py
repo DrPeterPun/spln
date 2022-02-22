@@ -13,23 +13,26 @@ nomes = []
 
 for line in lines:
     r = recasamento.search(line)
+    #casamentos
     if r:
         nomes.append(r.groups()[0])
         nomes.append(r.groups()[1])
+
     r = rebatismo.search(line)
+    # batismos
     if r:
         c = r.groups()[0]
         pai =r.groups()[1]
         mae = r.groups()[2]
         # print(c + ";" + pai  + ";" + mae) 
         # primeiro ver se o nome da mae acaba em "de qlqr coisa"
-        relastname = re.compile(r'(d(a|e|o ) )?\w+\Z')
+        relastname = re.compile(r'(d(a|e|o) )?\w+\Z')
         lnpai = relastname.search(pai)
         lnmae = relastname.search(mae)
         if c and lnpai and lnmae:
             c =  f"{c} {lnmae[0]} {lnpai[0]}"
             nomes.append(c)
-            #print(c)
+            print(c)
             nomes.append(mae)
             nomes.append(pai)
 
@@ -56,14 +59,8 @@ print(f"existem {nrNomes} nomes")
 
 ordenadoFreq = list(map(frst , sorted(dictitems, key=scnd , reverse=True)))
 print("por ordem de frequencia: ")
-print(ordenadoFreq)
+#print(ordenadoFreq)
 
 ordenadoAlph = sorted(dict.keys())
 print("por ordem alfabetica: ")
-print( ordenadoAlph)
-
-
-
-
-
-
+#print( ordenadoAlph)
