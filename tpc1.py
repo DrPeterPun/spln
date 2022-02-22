@@ -26,7 +26,7 @@ for line in lines:
         mae = r.groups()[2]
         # print(c + ";" + pai  + ";" + mae) 
         # primeiro ver se o nome da mae acaba em "de qlqr coisa"
-        relastname = re.compile(r'(d(a|e|o) )?\w+\Z')
+        relastname = re.compile(r'(d(?:a|e|o) )?\w+\Z')
         lnpai = relastname.search(pai)
         lnmae = relastname.search(mae)
         if c and lnpai and lnmae:
