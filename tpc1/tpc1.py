@@ -3,7 +3,7 @@ from ctypes import sizeof
 import re
 import functools
 
-file = open('ABM_807', "r")
+file = open('tpc1/ABM_807', "r")
 lines = file.readlines()
 recasamento = re.compile(r'Registo de casamento n.º \d*: (.*\S) c.c. (.*\S)\s*')
 rebatismo = re.compile(r'Registo de batismo n.º \d*: (.*\S) \. Pai: (.*\S) ; M.e: (.*\S)')
@@ -40,6 +40,7 @@ print(f"existem {len(nomes)} nomes")
 
 dict = {}
 for n in nomes:
+    #dict.setdefault(0)
     if not dict.get(n):
         dict.update({n:0})
     dict.update({n: dict.get(n)+1})
@@ -59,8 +60,8 @@ print(f"existem {nrNomes} nomes")
 
 ordenadoFreq = list(map(frst , sorted(dictitems, key=scnd , reverse=True)))
 print("por ordem de frequencia: ")
-#print(ordenadoFreq)
+print(ordenadoFreq)
 
 ordenadoAlph = sorted(dict.keys())
 print("por ordem alfabetica: ")
-#print( ordenadoAlph)
+print( ordenadoAlph)
