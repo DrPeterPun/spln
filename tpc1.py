@@ -55,7 +55,7 @@ def frst(a):
     return fst
 
 dictitems = dict.items()
-nrNomes =len(dictitems) 
+nrNomes =len(dictitems)
 print(f"existem {nrNomes} nomes")
 
 ordenadoFreq = list(map(frst , sorted(dictitems, key=scnd , reverse=True)))
