@@ -35,16 +35,16 @@ def processEntry(entry : str):
     if m:
         print(m.groups()[1])
     else:
-        print(c[0].strip(), "C[0]")
+        print(c[0].strip())
     info = re.sub(r"\b(en|pt|es|la)\b",r"😀\1",c[1])
     info = re.sub(r"((?:SIN|Nota|VAR|Vid)\.-)",r"😎\1",info)
 
     domain = re.split(r"\s{2,}|\t", clean(re.search(r"[^😀😎]*", info)[0].strip()))
     trads = [(x[0], info_split(clean(x[1]))) for x in re.findall(r"😀(\w+)([^😀😎]*)",info)]
     etc = [(x[0], info_split(clean(x[1]))) for x in re.findall(r"😎(\w+)\.-([^😀😎]*)", info)]
-    print("😷", domain)
-    print("😀", trads)
-    print("😎", etc)
+    #print("😷", domain)
+    #print("😀", trads)
+    #print("😎", etc)
     #dict.update(domain)
     
 
