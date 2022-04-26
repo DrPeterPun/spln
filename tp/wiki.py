@@ -29,6 +29,7 @@ def isWord(s):
 #        newwl.append( str(Word(w).translate(from_lang="pt",to="en")) )
 #   return newwl
 
+#testa a palavra word para var as suas relacoes com as palavras words
 def test_word(word,words):
     wikipedia.set_lang("pt")
     result = wikipedia.search(word)
